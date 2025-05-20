@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     private Vector2 curMovementInput;
     public float jumpPower;
-
+    public float crouchingSpeed;
+    private bool isCrouching;
+    private float prevSpeed;
 
     [Header("Look")]
     public Transform springArm;
+    public Transform prevPosition;
     public float minXLook;
     public float maxXLook;
     public float camCurXRot;
@@ -57,6 +60,23 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Started)
         {
             _rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+
+    public void OnCrouchingInput(InputAction.CallbackContext context)
+    { 
+        if (context.phase == InputActionPhase.Started && isCrouching)
+        {
+            prevSpeed = moveSpeed;
+            moveSpeed *= crouchingSpeed;
+            prevPosition = springArm.transform;
+            springArm.transform.position = Vector3.down * 0.6f;
+        }
+
+        else
+        {
+            moveSpeed = prevSpeed;
+            springArm.transform.position = prevPosition.position;
         }
     }
 
