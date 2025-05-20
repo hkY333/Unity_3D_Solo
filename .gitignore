@@ -12,7 +12,7 @@
 [Uu]ser[Ss]ettings/
 
 # 외부 에셋 제외 (라이센스 보호)
-/Assets/99.ExternalAssets/
+/Assets/ExternalAssets/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
