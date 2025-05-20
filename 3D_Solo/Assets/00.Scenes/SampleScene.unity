@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 601464959}
   - component: {fileID: 601464961}
   - component: {fileID: 601464960}
+  - component: {fileID: 601464962}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -221,6 +222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd74b8dbf0ce55e4097895f949983417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  springArm: {fileID: 1298396798}
+  minXLook: 0
+  maxXLook: 0
+  camCurXRot: 0
+  lookSensitivity: 0
 --- !u!114 &601464961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +240,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7449cf7c888c784ca53adbc5e5cc06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+--- !u!114 &601464962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601464956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 24be0aff1e7e1194f963df3c2f42dfb9, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 601464960}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ed48dcec-20ec-4117-b088-522c81e1f61d
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5900c9d8-9ec9-444a-a195-95c7994f1a1c
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7ff3fcb8-629f-45e3-817e-4c23314bb358
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f2476e38-8e24-4942-a2b6-6392a0a45e21
+    m_ActionName: Player/Interaction[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c51f129a-c62c-4476-a1ae-64dd5bcebb09
+    m_ActionName: Player/Inventory[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5cefbcb-0ed7-4f69-b040-c7280c7376c5
+    m_ActionName: Player/Crouching[/Keyboard/c]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
