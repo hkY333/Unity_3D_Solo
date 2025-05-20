@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     private Vector2 curMovementInput;
+    public float jumpPower;
+
 
     [Header("Look")]
     public Transform springArm;
@@ -47,6 +49,14 @@ public class PlayerController : MonoBehaviour
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
+        }
+    }
+
+    public void OnJumpInput(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            _rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
     }
 
