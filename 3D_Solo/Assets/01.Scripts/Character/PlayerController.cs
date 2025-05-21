@@ -7,20 +7,19 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    [SerializeField] private float moveSpeed;
     private Vector2 curMovementInput;
-    public float jumpPower;
-    public float crouchingSpeed;
-    private bool isCrouching;
-    private float prevSpeed;
+    [SerializeField] private float jumpPower;
+    [SerializeField] private float crouchingSpeed;
+    [SerializeField] private bool isCrouching = false;
+    [SerializeField] private float prevSpeed;
 
     [Header("Look")]
-    public Transform springArm;
-    public Transform prevPosition;
-    public float minXLook;
-    public float maxXLook;
-    public float camCurXRot;
-    public float lookSensitivity;
+    [SerializeField] private Transform springArm;
+    [SerializeField] private float minXLook;
+    [SerializeField] private float maxXLook;
+    [SerializeField] private float camCurXRot;
+    [SerializeField] private float lookSensitivity;
 
     private Vector2 mouseDelta;
 
@@ -65,18 +64,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnCrouchingInput(InputAction.CallbackContext context)
     { 
-        if (context.phase == InputActionPhase.Started && isCrouching)
+        if (context.phase == InputActionPhase.Started && isCrouching == false)
         {
             prevSpeed = moveSpeed;
             moveSpeed *= crouchingSpeed;
-            prevPosition = springArm.transform;
-            springArm.transform.position = Vector3.down * 0.6f;
+            isCrouching = true;
         }
 
-        else
+        else if (context.phase == InputActionPhase.Started && isCrouching == true)
         {
             moveSpeed = prevSpeed;
-            springArm.transform.position = prevPosition.position;
+            isCrouching= false;
         }
     }
 

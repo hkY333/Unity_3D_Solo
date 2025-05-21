@@ -1200,7 +1200,7 @@ MonoBehaviour:
   curAmount: 0
   startAmount: 100
   maxAmount: 100
-  passiveAmount: 1
+  passiveAmount: 0.5
   bar: {fileID: 1642324816}
 --- !u!1 &1478593884
 GameObject:
