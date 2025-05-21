@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
+    public bool canLook = true;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -40,6 +42,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+    }
+
+    private void LateUpdate()
+    {
+        if (canLook)
+        {
+            CameraLook();
+        }
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -78,6 +88,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnLookInput(InputAction.CallbackContext context)
+    {
+        mouseDelta = context.ReadValue<Vector2>();
+    }
+
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
@@ -86,4 +101,14 @@ public class PlayerController : MonoBehaviour
 
         _rigidbody.velocity = dir;
     }
+
+    void CameraLook()
+    {
+        camCurXRot += mouseDelta.y * lookSensitivity;
+        camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
+        springArm.localEulerAngles = new Vector3(-camCurXRot, 0, 0);
+
+        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+    }
+
 }
