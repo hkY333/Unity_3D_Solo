@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.77505237, g: 1, b: 0.26981127, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 267775885}
   - component: {fileID: 267775887}
   - component: {fileID: 267775886}
+  - component: {fileID: 267775888}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -408,6 +409,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267775884}
   m_CullTransparentMesh: 1
+--- !u!114 &267775888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267775884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38315eedc8daf134fbdcb2b8557af34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curAmount: 0
+  startAmount: 100
+  maxAmount: 100
+  passiveAmount: 10
+  bar: {fileID: 58911328}
 --- !u!1 &422513939
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6377357, g: 0.3357137, b: 0.3357137, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1100,6 +1118,7 @@ GameObject:
   - component: {fileID: 1428538487}
   - component: {fileID: 1428538489}
   - component: {fileID: 1428538488}
+  - component: {fileID: 1428538490}
   m_Layer: 5
   m_Name: HPBar
   m_TagString: Untagged
@@ -1166,6 +1185,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428538486}
   m_CullTransparentMesh: 1
+--- !u!114 &1428538490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428538486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38315eedc8daf134fbdcb2b8557af34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curAmount: 0
+  startAmount: 100
+  maxAmount: 100
+  passiveAmount: 1
+  bar: {fileID: 1642324816}
 --- !u!1 &1478593884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1213,7 @@ GameObject:
   - component: {fileID: 1478593885}
   - component: {fileID: 1478593887}
   - component: {fileID: 1478593886}
+  - component: {fileID: 1478593888}
   m_Layer: 5
   m_Name: Hunger
   m_TagString: Untagged
@@ -1243,6 +1280,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478593884}
   m_CullTransparentMesh: 1
+--- !u!114 &1478593888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478593884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38315eedc8daf134fbdcb2b8557af34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curAmount: 0
+  startAmount: 250
+  maxAmount: 300
+  passiveAmount: -2
+  bar: {fileID: 848761936}
 --- !u!1 &1554269459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.039215688, b: 0.13725491, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
