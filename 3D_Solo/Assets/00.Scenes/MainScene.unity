@@ -1240,8 +1240,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 83015242}
-  - {fileID: 1114999276}
   - {fileID: 330414069}
+  - {fileID: 1114999276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4115,7 +4115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ItemName
+  m_text: 'Name
 
 '
   m_isRightToLeft: 0
