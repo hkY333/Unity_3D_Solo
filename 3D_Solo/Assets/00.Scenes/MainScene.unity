@@ -818,8 +818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curAmount: 0
-  startAmount: 80
-  maxAmount: 100
+  startAmount: 200
+  maxAmount: 200
   passiveAmount: -1
   bar: {fileID: 58911328}
 --- !u!1001 &310688387
