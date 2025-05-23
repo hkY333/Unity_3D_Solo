@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxXLook;
     [SerializeField] private float camCurXRot;
     [SerializeField] private float lookSensitivity;
-
     private Vector2 mouseDelta;
 
     private Rigidbody _rigidbody;
