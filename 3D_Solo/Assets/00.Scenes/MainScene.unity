@@ -1608,6 +1608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  condition: {fileID: 0}
+  itemData: {fileID: 0}
 --- !u!114 &601464962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4346,6 +4348,7 @@ GameObject:
   - component: {fileID: 1672291694}
   - component: {fileID: 1672291696}
   - component: {fileID: 1672291695}
+  - component: {fileID: 1672291697}
   m_Layer: 0
   m_Name: Item_Sausage
   m_TagString: Untagged
@@ -4417,6 +4420,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15, y: 0.045, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1672291697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672291693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb119ee0a1246e458ebce26ceca006d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 74d43efc650b0d34fa0168789026cdc3, type: 2}
 --- !u!1001 &1917478958
 PrefabInstance:
   m_ObjectHideFlags: 0
