@@ -1514,7 +1514,7 @@ Transform:
   m_GameObject: {fileID: 601464956}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.25}
+  m_LocalPosition: {x: 0, y: 0.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1586,6 +1586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpPower: 100
+  jumpCount: 0
   crouchingSpeed: 0.5
   isCrouching: 0
   prevSpeed: 0
@@ -2736,7 +2737,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 951
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4452,7 +4453,7 @@ GameObject:
   - component: {fileID: 1989988439}
   - component: {fileID: 1989988438}
   - component: {fileID: 1989988437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4559,11 +4560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 720249291974717144, guid: 822e6f0321977524b80af73d4cea0764, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 0.559
       objectReference: {fileID: 0}
     - target: {fileID: 720249291974717144, guid: 822e6f0321977524b80af73d4cea0764, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.318
       objectReference: {fileID: 0}
     - target: {fileID: 720249291974717144, guid: 822e6f0321977524b80af73d4cea0764, type: 3}
       propertyPath: m_LocalRotation.w

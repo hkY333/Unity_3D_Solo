@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Vector2 curMovementInput;
     [SerializeField] private float jumpPower;
+    [SerializeField] private float jumpCount = 0;
     [SerializeField] private float crouchingSpeed;
     [SerializeField] private bool isCrouching = false;
     [SerializeField] private float prevSpeed;
@@ -65,9 +66,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started)
+        if(context.phase == InputActionPhase.Started && jumpCount == 0)
         {
+            _rigidbody.velocity = Vector2.zero;
             _rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            jumpCount++;
         }
     }
 
@@ -110,4 +113,12 @@ public class PlayerController : MonoBehaviour
         transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") &&
+            _rigidbody.velocity.y == 0)
+        {
+            jumpCount = 0;
+        }
+    }
 }
