@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemData : MonoBehaviour
+public enum ItemType
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Equipable,
+    Consumable
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public enum ConsumableType
+{
+    Hunger,
+    Thirst
+}
+
+[System.Serializable]
+public class ItemDataConsumable
+{
+    public ConsumableType type;
+    public float value;
+}
+
+[CreateAssetMenu(fileName = "Item", menuName = "New Item")]
+public class ItemData : ScriptableObject
+{
+    [Header("Info")]
+    public string displayName;
+    public string description;
+    public ItemType type;
+    public Sprite icon;
+    public GameObject dropPrefab;
+
+    [Header("Stacking")]
+    public bool canStack;
+    public int maxStackAmount;
+
+    [Header("Consumable")]
+    public ItemDataConsumable[] consumables;
 }
